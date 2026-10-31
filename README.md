@@ -19,7 +19,9 @@ Built for [KREA 2 Turbo](https://huggingface.co/Comfy-Org/Krea-2) and other long
 
 ## The node
 
-Clone into `custom_nodes` and restart ComfyUI:
+**ComfyUI Manager (easiest):** search for **Clio Style Library**, install it, and restart ComfyUI. No git needed.
+
+**Manual:** clone into `custom_nodes` and restart ComfyUI:
 
 ```
 cd ComfyUI/custom_nodes
