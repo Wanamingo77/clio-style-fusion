@@ -15,7 +15,8 @@ Built for [KREA 2 Turbo](https://huggingface.co/Comfy-Org/Krea-2) and other long
 
 - Each of these entries in `styles.json` has a `negative` field. Both nodes expose it as the **`neg_prompt`** output, right under `styled_prompt`, as MOSS's base negative (`nsfw, worst quality, bad anatomy, watermark, jpeg artifact`) followed by the style's own. Wire it into your own negative CLIP Text Encode. Every other style outputs an empty string.
 - `strength` is applied to the `conditioning` blend as before. At `0` the node is fully unstyled and `neg_prompt` is empty too.
-- `neg_prompt` is output slot 2, so `style_name` and `filename_prefix` moved one slot down. Re-connect those links in existing workflows.
+- **Style Encode** outputs `cond_pos` (the original conditioning, with `strength` applied) and `cond_neg` (the negative encoded; an empty-text encode when the style has none, so it exists for every style). The plain **Style Library** node has no CLIP input, so it only outputs strings.
+- Output slots changed: `cond_pos`, `cond_neg`, `styled_prompt`, `neg_prompt`, `style_name`, `filename_prefix` (Style Library: `styled_prompt`, `neg_prompt`, `style_name`, `filename_prefix`). Re-connect links to `styled_prompt`/`style_name`/`filename_prefix` in existing workflows.
 
 ### Editing styles from the dashboard
 

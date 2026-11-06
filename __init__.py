@@ -121,8 +121,8 @@ class ClioStyleEncode:
             }
         }
 
-    RETURN_TYPES = ("CONDITIONING", "STRING", "STRING", "STRING", "STRING")
-    RETURN_NAMES = ("conditioning", "styled_prompt", "neg_prompt", "style_name", "filename_prefix")
+    RETURN_TYPES = ("CONDITIONING", "CONDITIONING", "STRING", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("cond_pos", "cond_neg", "styled_prompt", "neg_prompt", "style_name", "filename_prefix")
     FUNCTION = "encode"
     CATEGORY = "Clio 💅"
     DESCRIPTION = "Clio Style Library + text encode, with a style strength slider (a conditioning " \
@@ -141,7 +141,10 @@ class ClioStyleEncode:
             cond = encode(clip, styled)[0]
             if strength < 1.0 and styled != plain:
                 cond = nodes.ConditioningAverage().addWeighted(cond, encode(clip, plain)[0], strength)[0]
-        return (cond, styled, neg, name, prefix)
+        # cond_neg is always there, for every style: the style's negative prompt encoded
+        # (MOSS base + its own), or an empty-text encode when the style has none
+        cond_neg = encode(clip, neg)[0]
+        return (cond, cond_neg, styled, neg, name, prefix)
 
 
 NODE_CLASS_MAPPINGS = {"ClioStyle": ClioStyle, "ClioStyleEncode": ClioStyleEncode}
