@@ -3,7 +3,7 @@
  "seed": 1997,
  "sections": {
   "krea2": {
-   "title": "KREA 2 Turbo",
+   "title": "Styles",
    "template": "Style: {name}: {style}. Subject: {prompt}",
    "images": [
     {
@@ -2489,6 +2489,266 @@
      "file": "krea2/thumbs/Impasto.jpg",
      "thumb": "krea2/thumbs/Impasto.jpg",
      "seed": 1997
+    },
+    {
+     "style": "Kodak Portra 400",
+     "file": "moss/thumbs/Kodak Portra 400.jpg",
+     "thumb": "moss/thumbs/Kodak Portra 400.jpg"
+    },
+    {
+     "style": "Kodak Ektar 100",
+     "file": "moss/thumbs/Kodak Ektar 100.jpg",
+     "thumb": "moss/thumbs/Kodak Ektar 100.jpg"
+    },
+    {
+     "style": "Kodak Gold 200",
+     "file": "moss/thumbs/Kodak Gold 200.jpg",
+     "thumb": "moss/thumbs/Kodak Gold 200.jpg"
+    },
+    {
+     "style": "Fuji Superia 400",
+     "file": "moss/thumbs/Fuji Superia 400.jpg",
+     "thumb": "moss/thumbs/Fuji Superia 400.jpg"
+    },
+    {
+     "style": "Fuji Pro 400H",
+     "file": "moss/thumbs/Fuji Pro 400H.jpg",
+     "thumb": "moss/thumbs/Fuji Pro 400H.jpg"
+    },
+    {
+     "style": "CineStill 800T",
+     "file": "moss/thumbs/CineStill 800T.jpg",
+     "thumb": "moss/thumbs/CineStill 800T.jpg"
+    },
+    {
+     "style": "CineStill 50D",
+     "file": "moss/thumbs/CineStill 50D.jpg",
+     "thumb": "moss/thumbs/CineStill 50D.jpg"
+    },
+    {
+     "style": "Kodachrome 64",
+     "file": "moss/thumbs/Kodachrome 64.jpg",
+     "thumb": "moss/thumbs/Kodachrome 64.jpg"
+    },
+    {
+     "style": "Fuji Velvia 50",
+     "file": "moss/thumbs/Fuji Velvia 50.jpg",
+     "thumb": "moss/thumbs/Fuji Velvia 50.jpg"
+    },
+    {
+     "style": "Cross-processed slide",
+     "file": "moss/thumbs/Cross-processed slide.jpg",
+     "thumb": "moss/thumbs/Cross-processed slide.jpg"
+    },
+    {
+     "style": "Kodak Tri-X 400",
+     "file": "moss/thumbs/Kodak Tri-X 400.jpg",
+     "thumb": "moss/thumbs/Kodak Tri-X 400.jpg"
+    },
+    {
+     "style": "Ilford HP5 pushed to 3200",
+     "file": "moss/thumbs/Ilford HP5 pushed to 3200.jpg",
+     "thumb": "moss/thumbs/Ilford HP5 pushed to 3200.jpg"
+    },
+    {
+     "style": "Kodak T-Max 100",
+     "file": "moss/thumbs/Kodak T-Max 100.jpg",
+     "thumb": "moss/thumbs/Kodak T-Max 100.jpg"
+    },
+    {
+     "style": "Polaroid SX-70",
+     "file": "moss/thumbs/Polaroid SX-70.jpg",
+     "thumb": "moss/thumbs/Polaroid SX-70.jpg"
+    },
+    {
+     "style": "Expired Polaroid",
+     "file": "moss/thumbs/Expired Polaroid.jpg",
+     "thumb": "moss/thumbs/Expired Polaroid.jpg"
+    },
+    {
+     "style": "Instax Mini",
+     "file": "moss/thumbs/Instax Mini.jpg",
+     "thumb": "moss/thumbs/Instax Mini.jpg"
+    },
+    {
+     "style": "Kodak Vision3 500T",
+     "file": "moss/thumbs/Kodak Vision3 500T.jpg",
+     "thumb": "moss/thumbs/Kodak Vision3 500T.jpg"
+    },
+    {
+     "style": "Super 8",
+     "file": "moss/thumbs/Super 8.jpg",
+     "thumb": "moss/thumbs/Super 8.jpg"
+    },
+    {
+     "style": "Disposable",
+     "file": "moss/thumbs/Disposable.jpg",
+     "thumb": "moss/thumbs/Disposable.jpg"
+    },
+    {
+     "style": "Holga",
+     "file": "moss/thumbs/Holga.jpg",
+     "thumb": "moss/thumbs/Holga.jpg"
+    },
+    {
+     "style": "Diana",
+     "file": "moss/thumbs/Diana.jpg",
+     "thumb": "moss/thumbs/Diana.jpg"
+    },
+    {
+     "style": "Lomo LC-A",
+     "file": "moss/thumbs/Lomo LC-A.jpg",
+     "thumb": "moss/thumbs/Lomo LC-A.jpg"
+    },
+    {
+     "style": "Pinhole",
+     "file": "moss/thumbs/Pinhole.jpg",
+     "thumb": "moss/thumbs/Pinhole.jpg"
+    },
+    {
+     "style": "Fisheye toy camera",
+     "file": "moss/thumbs/Fisheye toy camera.jpg",
+     "thumb": "moss/thumbs/Fisheye toy camera.jpg"
+    },
+    {
+     "style": "Sprocket Rocket",
+     "file": "moss/thumbs/Sprocket Rocket.jpg",
+     "thumb": "moss/thumbs/Sprocket Rocket.jpg"
+    },
+    {
+     "style": "Half-frame diptych",
+     "file": "moss/thumbs/Half-frame diptych.jpg",
+     "thumb": "moss/thumbs/Half-frame diptych.jpg"
+    },
+    {
+     "style": "Contax T2",
+     "file": "moss/thumbs/Contax T2.jpg",
+     "thumb": "moss/thumbs/Contax T2.jpg"
+    },
+    {
+     "style": "Kodak Brownie box camera",
+     "file": "moss/thumbs/Kodak Brownie box camera.jpg",
+     "thumb": "moss/thumbs/Kodak Brownie box camera.jpg"
+    },
+    {
+     "style": "Kodak Instamatic 110",
+     "file": "moss/thumbs/Kodak Instamatic 110.jpg",
+     "thumb": "moss/thumbs/Kodak Instamatic 110.jpg"
+    },
+    {
+     "style": "2000s digicam",
+     "file": "moss/thumbs/2000s digicam.jpg",
+     "thumb": "moss/thumbs/2000s digicam.jpg"
+    },
+    {
+     "style": "Fujifilm Classic Chrome",
+     "file": "moss/thumbs/Fujifilm Classic Chrome.jpg",
+     "thumb": "moss/thumbs/Fujifilm Classic Chrome.jpg"
+    },
+    {
+     "style": "Glass plate",
+     "file": "moss/thumbs/Glass plate.jpg",
+     "thumb": "moss/thumbs/Glass plate.jpg"
+    },
+    {
+     "style": "Tintype / wet plate",
+     "file": "moss/thumbs/Tintype  wet plate.jpg",
+     "thumb": "moss/thumbs/Tintype  wet plate.jpg"
+    },
+    {
+     "style": "Daguerreotype",
+     "file": "moss/thumbs/Daguerreotype.jpg",
+     "thumb": "moss/thumbs/Daguerreotype.jpg"
+    },
+    {
+     "style": "Warm golden",
+     "file": "moss/thumbs/Warm golden.jpg",
+     "thumb": "moss/thumbs/Warm golden.jpg"
+    },
+    {
+     "style": "Faded 1970s print",
+     "file": "moss/thumbs/Faded 1970s print.jpg",
+     "thumb": "moss/thumbs/Faded 1970s print.jpg"
+    },
+    {
+     "style": "Matte faded film",
+     "file": "moss/thumbs/Matte faded film.jpg",
+     "thumb": "moss/thumbs/Matte faded film.jpg"
+    },
+    {
+     "style": "Cool muted",
+     "file": "moss/thumbs/Cool muted.jpg",
+     "thumb": "moss/thumbs/Cool muted.jpg"
+    },
+    {
+     "style": "Teal and orange",
+     "file": "moss/thumbs/Teal and orange.jpg",
+     "thumb": "moss/thumbs/Teal and orange.jpg"
+    },
+    {
+     "style": "Bleach bypass",
+     "file": "moss/thumbs/Bleach bypass.jpg",
+     "thumb": "moss/thumbs/Bleach bypass.jpg"
+    },
+    {
+     "style": "Sepia",
+     "file": "moss/thumbs/Sepia.jpg",
+     "thumb": "moss/thumbs/Sepia.jpg"
+    },
+    {
+     "style": "Warm vintage filter",
+     "file": "moss/thumbs/Warm vintage filter.jpg",
+     "thumb": "moss/thumbs/Warm vintage filter.jpg"
+    },
+    {
+     "style": "Pastel dream",
+     "file": "moss/thumbs/Pastel dream.jpg",
+     "thumb": "moss/thumbs/Pastel dream.jpg"
+    },
+    {
+     "style": "Moody dark",
+     "file": "moss/thumbs/Moody dark.jpg",
+     "thumb": "moss/thumbs/Moody dark.jpg"
+    },
+    {
+     "style": "Golden hour glow",
+     "file": "moss/thumbs/Golden hour glow.jpg",
+     "thumb": "moss/thumbs/Golden hour glow.jpg"
+    },
+    {
+     "style": "Light leaks",
+     "file": "moss/thumbs/Light leaks.jpg",
+     "thumb": "moss/thumbs/Light leaks.jpg"
+    },
+    {
+     "style": "Fogged film",
+     "file": "moss/thumbs/Fogged film.jpg",
+     "thumb": "moss/thumbs/Fogged film.jpg"
+    },
+    {
+     "style": "Accidental double exposure",
+     "file": "moss/thumbs/Accidental double exposure.jpg",
+     "thumb": "moss/thumbs/Accidental double exposure.jpg"
+    },
+    {
+     "style": "Scratched negative",
+     "file": "moss/thumbs/Scratched negative.jpg",
+     "thumb": "moss/thumbs/Scratched negative.jpg"
+    },
+    {
+     "style": "Smeared lens",
+     "file": "moss/thumbs/Smeared lens.jpg",
+     "thumb": "moss/thumbs/Smeared lens.jpg"
+    },
+    {
+     "style": "End of the roll",
+     "file": "moss/thumbs/End of the roll.jpg",
+     "thumb": "moss/thumbs/End of the roll.jpg"
+    },
+    {
+     "style": "Expired film",
+     "file": "moss/thumbs/Expired film.jpg",
+     "thumb": "moss/thumbs/Expired film.jpg"
     }
    ]
   }

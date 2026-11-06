@@ -8,6 +8,27 @@ Built for [KREA 2 Turbo](https://huggingface.co/Comfy-Org/Krea-2) and other long
 
 ![Split compare: Ghibli vs Yoshitaka Amano](docs/gallery-compare.png)
 
+
+## 🎞️ Film & Camera categories (Moss Image)
+
+52 extra styles for Moss Image, from [robertcreative.com](https://www.robertcreative.com/blog/moss-image-film-camera-prompts), with the descriptions and negative prompts as supplied: **Film** (18 stocks, 11 color looks, 7 broken-film effects) and **Camera** (16 cameras and processes). They also appear as the **Moss Image** tab of the gallery.
+
+- Each of these entries in `styles.json` has a `negative` field. Both nodes expose it as the **`neg_prompt`** output, right under `styled_prompt`, as MOSS's base negative (`nsfw, worst quality, bad anatomy, watermark, jpeg artifact`) followed by the style's own. Wire it into your own negative CLIP Text Encode. Every other style outputs an empty string.
+- `strength` is applied to the `conditioning` blend as before. At `0` the node is fully unstyled and `neg_prompt` is empty too.
+- `neg_prompt` is output slot 2, so `style_name` and `filename_prefix` moved one slot down. Re-connect those links in existing workflows.
+
+### Editing styles from the dashboard
+
+With ComfyUI running, open `http://127.0.0.1:8188/clio_style/gallery/index.html`, click any style, then **✎ edit** to change its description (and negative prompt, for Film/Camera) and upload a new reference image. **Save** writes `styles.json` immediately and converts the image to a JPEG (max 1024 px) at the style's gallery path (`gallery/moss/thumbs/<name>.jpg` for the Moss styles). No restart needed; refresh the node preview to see it. The edit button is hidden when the gallery is opened from GitHub Pages or a file.
+
+### Hiding styles from the node
+
+In the same dashboard every tile has a hide button (crossed eye), and **☑ select** lets you hide or unhide several at once; **↶ undo** reverses the last action and **hidden: N** lists only the hidden ones. Hidden styles are greyed out with a red ✕ in the gallery and disappear from the node's dropdown, preview arrows and picker. The list lives in `hidden_styles.json` (per-user, gitignored). Reload the ComfyUI page (or refresh node definitions) to update the dropdown.
+
+### Reference images for the Moss styles
+
+`scripts/moss_reference_batch.py` renders them with MOSS through a running ComfyUI: the same subject prompt and seed (1997) as the rest of the gallery, the style description first, the style's negative prompt on the negative side, saved as 512px JPEGs in `gallery/moss/thumbs/`.
+
 ## What's in the box
 
 | Piece | What it does |

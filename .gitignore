@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 gallery/krea2/*.png
+
+hidden_styles.json

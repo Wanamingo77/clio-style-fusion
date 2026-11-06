@@ -29,6 +29,10 @@ async function getPicker() {
     if (e.section) sectionOf[e.name] = e.section;
   }
   const images = Object.values(manifest.sections || {}).flatMap((s) => s.images || []);
+  // styles with no manifest render yet (Film / Camera) still get a tile; their
+  // reference image is optional — drop gallery/moss/thumbs/<style>.jpg to add one
+  const haveThumb = new Set(images.map((i) => i.style));
+  for (const e of styles) if (!haveThumb.has(e.name)) images.push({ style: e.name });
 
   const overlay = document.createElement("div");
   overlay.style.cssText =
@@ -46,7 +50,7 @@ async function getPicker() {
     "display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #35222c;flex-wrap:wrap;";
   header.innerHTML =
     `<span style="color:${PINK};font-size:15px;font-weight:600;">💅 pick a style</span>` +
-    `<input type="text" placeholder="search 414 styles…" style="flex:1;min-width:160px;background:#241722;` +
+    `<input type="text" placeholder="search ${images.length} styles…" style="flex:1;min-width:160px;background:#241722;` +
     `border:1px solid #46293a;border-radius:8px;color:#f4dce9;padding:6px 10px;font-size:13px;outline:none;">` +
     `<select style="background:#241722;border:1px solid #46293a;border-radius:8px;color:#f4dce9;padding:6px;font-size:13px;"></select>` +
     `<a href="/clio_style/gallery/index.html" target="_blank" style="color:${GOLD};font-size:12px;text-decoration:none;">open full gallery ↗</a>` +
@@ -105,6 +109,11 @@ async function getPicker() {
     im.src = "/clio_style/thumb?style=" + encodeURIComponent(entry.style);
     im.draggable = false;
     im.style.cssText = "width:146px;height:146px;object-fit:cover;display:block;";
+    // no reference image yet: keep the tile square with a quiet placeholder
+    im.onerror = () => {
+      im.style.visibility = "hidden";
+      tile.style.background = "#241722 linear-gradient(135deg,#2a1b25,#1a1418)";
+    };
     const label = document.createElement("div");
     label.textContent = entry.style;
     label.style.cssText =
@@ -125,11 +134,13 @@ async function getPicker() {
     return tile;
   });
 
+  // styles hidden from the node in the dashboard; re-read every time the picker opens
+  let hiddenStyles = new Set();
   function applyFilter() {
     const q = search.value.trim().toLowerCase();
     const t = tradSel.value;
     for (const tile of tiles) {
-      const hit = (!q || tile.dataset.style.toLowerCase().includes(q)) && (!t || tile.dataset.section === t);
+      const hit = !hiddenStyles.has(tile.dataset.style) && (!q || tile.dataset.style.toLowerCase().includes(q)) && (!t || tile.dataset.section === t);
       tile.style.display = hit ? "" : "none";
     }
   }
@@ -145,6 +156,7 @@ async function getPicker() {
   function show(node, styleWidget) {
     current = { node, styleWidget };
     search.value = ""; tradSel.value = ""; applyFilter();
+    fetch("/clio_style/hidden").then((r) => r.json()).then((d) => { hiddenStyles = new Set(d.hidden || []); applyFilter(); }).catch(() => {});
     let selected = null;
     for (const tile of tiles) {
       const isSel = tile.dataset.style === styleWidget.value;

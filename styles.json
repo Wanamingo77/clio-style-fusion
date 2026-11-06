@@ -2068,5 +2068,317 @@
   "name": "Impasto",
   "prompt": "A richly physical painting style built on thickly applied pigment that stands proud from the working surface, ridges and peaks of dried medium catching real directional light with sculptural dimensionality, confident, decisive strokes carrying visible weight and texture across the entire composition, dramatic tactile depth replacing smooth blending or flat coverage entirely, and a raw, sculptural painterly intensity that celebrates the physical presence of pigment itself. Influenced by: Vincent van Gogh, Lucian Freud, impasto oil-painting technique, expressive thick-pigment method.",
   "section": "Painting"
+ },
+ {
+  "name": "Kodak Portra 400",
+  "prompt": "35mm color negative film photo, warm natural skin tones, creamy highlights, soft contrast, slightly muted greens, fine grain.",
+  "negative": "cold blue tones, washed out pale colors, pink cast, high contrast, oversaturated, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Kodak Ektar 100",
+  "prompt": "35mm color negative film photo, very saturated punchy colors, vivid reds and blues, crisp detail, very fine grain.",
+  "negative": "muted dull colors, faded, low contrast, desaturated",
+  "section": "Film"
+ },
+ {
+  "name": "Kodak Gold 200",
+  "prompt": "35mm consumer color film photo, warm golden tones, saturated warm reds and yellows, slightly muddy shadows, moderate grain.",
+  "negative": "cool blue tones, neutral white balance, yellow painted wall, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Fuji Superia 400",
+  "prompt": "Consumer 35mm film photo, slight green cast in the shadows, cool tones, punchy greens, moderate grain.",
+  "negative": "warm golden tones, orange cast, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Fuji Pro 400H",
+  "prompt": "35mm film photo, airy pastel colors, minty greens, cool soft highlights, low contrast, fine grain.",
+  "negative": "warm golden tones, deep blacks, high contrast, saturated colors",
+  "section": "Film"
+ },
+ {
+  "name": "CineStill 800T",
+  "prompt": "Tungsten-balanced night film photo, cool blue-teal shadows, soft red halation bloom around every light, organic film grain.",
+  "negative": "warm daylight colors, no glow, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "CineStill 50D",
+  "prompt": "Daylight motion picture film photo, cool clean neutral daylight colors, white balanced cool, very fine grain.",
+  "negative": "warm golden tones, yellow cast, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Kodachrome 64",
+  "prompt": "1960s color slide film photo, rich deep reds, dense dark blues, strong contrast, slightly warm, very fine grain.",
+  "negative": "faded pastel colors, low contrast, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Fuji Velvia 50",
+  "prompt": "Color slide film photo, hyper-saturated colors, intense greens and blues, deep black shadows, high contrast.",
+  "negative": "muted dull colors, low contrast, faded",
+  "section": "Film"
+ },
+ {
+  "name": "Cross-processed slide",
+  "prompt": "Cross-processed film photo, harsh contrast, yellow-green highlights, cyan shadows, blown out skin tones, strange color shifts.",
+  "negative": "natural colors, neutral white balance, soft contrast",
+  "section": "Film"
+ },
+ {
+  "name": "Kodak Tri-X 400",
+  "prompt": "Black and white 35mm film photo, gritty visible grain, high contrast, deep blacks, documentary feel.",
+  "negative": "color, colorful, saturated colors, red, green, orange, warm tones, sepia, color photo",
+  "section": "Film"
+ },
+ {
+  "name": "Ilford HP5 pushed to 3200",
+  "prompt": "Black and white film photo pushed in development, very heavy coarse grain, crushed black shadows, blown highlights.",
+  "negative": "color, colorful, color photo, clean smooth tones, fine grain, sepia",
+  "section": "Film"
+ },
+ {
+  "name": "Kodak T-Max 100",
+  "prompt": "Black and white film photo, smooth tones, very fine grain, crisp detail, full range of grays.",
+  "negative": "color, colorful, color photo, heavy grain, sepia",
+  "section": "Film"
+ },
+ {
+  "name": "Polaroid SX-70",
+  "prompt": "Square instant photo with a thick white border, soft focus, faded creamy colors, warm cast, low contrast.",
+  "negative": "wide rectangular photo, no border, crisp sharp detail, high contrast, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Expired Polaroid",
+  "prompt": "Old expired instant photo with a white border, chemical blotches and streaks at the edges, colors bleeding, washed out blue-pink cast.",
+  "negative": "clean pristine photo, no border, accurate colors, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Instax Mini",
+  "prompt": "Small instant photo with a white border, bright washed out colors, slightly overexposed, soft detail.",
+  "negative": "wide rectangular photo, no border, dark moody, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Kodak Vision3 500T",
+  "prompt": "35mm motion picture film still, cool blue-teal shadows, warm orange highlights, soft rolloff into the highlights, subtle grain.",
+  "negative": "neutral colors, warm golden shadows, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Super 8",
+  "prompt": "Frame from a Super 8 home movie, very heavy coarse grain, soft blurry low-resolution detail, faded warm yellow colors, dark rounded corners of the film frame.",
+  "negative": "crisp sharp detail, high resolution, clean noiseless image, clean digital photo",
+  "section": "Film"
+ },
+ {
+  "name": "Disposable",
+  "prompt": "Overexposed snapshot, flash fired in daylight blowing out bright skin, warm yellow-green color cast, low sharpness, heavy grain, dark vignette in the corners.",
+  "negative": "soft natural light, no flash, crisp professional photo, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Holga",
+  "prompt": "Square photo centered in the frame, with wide solid black bars on the left and right. Very heavy dark vignette, the corners fade to pure black, blurry smeared edges, only the center sharp, cyan shadows, yellow highlights.",
+  "negative": "wide rectangular frame, evenly lit corners, sharp edges, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Diana",
+  "prompt": "Soft hazy low-contrast image, glowing blown highlights, pale washed-out pastel colors, strong vignette, blurry everywhere except the middle.",
+  "negative": "sharp crisp detail, high contrast, saturated colors, evenly lit corners",
+  "section": "Camera"
+ },
+ {
+  "name": "Lomo LC-A",
+  "prompt": "Oversaturated deep blues and reds, very dark heavy vignette in all four corners, high contrast, slightly underexposed edges, bright center.",
+  "negative": "evenly lit corners, flat muted colors, low contrast, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Pinhole",
+  "prompt": "Entire image soft with no sharp edge anywhere, dim and murky, dark rounded vignette, faded brownish colors, ghostly blur on anything moving.",
+  "negative": "sharp crisp detail, bright clean image, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Fisheye toy camera",
+  "prompt": "Round fisheye image, strong barrel distortion bending straight lines, black circular edge around the picture.",
+  "negative": "straight lines, rectilinear lens, normal perspective, rectangular photo",
+  "section": "Camera"
+ },
+ {
+  "name": "Sprocket Rocket",
+  "prompt": "Very wide panoramic 35mm photo exposed across the whole film strip, sprocket holes and film edge markings visible along the top and bottom.",
+  "negative": "normal rectangular photo, no film border, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Half-frame diptych",
+  "prompt": "Two narrow vertical half-frame photos side by side on one strip of film, a thin dark line between them, slightly different moments.",
+  "negative": "single photo, one frame, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Contax T2",
+  "prompt": "Bright direct flash lighting the face flat and white, background a stop darker, punchy saturated colors, crisp center, fine grain.",
+  "negative": "soft natural light, no flash, muted colors",
+  "section": "Camera"
+ },
+ {
+  "name": "Kodak Brownie box camera",
+  "prompt": "1950s snapshot, square frame, soft focus away from the center, faded colors or black and white, small white border.",
+  "negative": "wide rectangular frame, crisp sharp detail, vivid colors, clean digital photo, HDR",
+  "section": "Camera"
+ },
+ {
+  "name": "Kodak Instamatic 110",
+  "prompt": "Fresh 1970s 110 film snapshot print, punchy high contrast, saturated warm colors, bright overexposed highlights, coarse grain, soft blurry detail.",
+  "negative": "faded, washed out, low contrast, muted colors, crisp sharp detail, clean noiseless image, clean digital photo",
+  "section": "Camera"
+ },
+ {
+  "name": "2000s digicam",
+  "prompt": "Harsh flat flash, blown-out white highlights, cool bluish white balance, oversharpened edges, noisy smudged shadows, orange date numbers printed in the bottom right corner.",
+  "negative": "film grain, soft natural light, professional photo, warm tones",
+  "section": "Camera"
+ },
+ {
+  "name": "Fujifilm Classic Chrome",
+  "prompt": "Muted documentary colors, desaturated blues, firm shadows, slightly cool.",
+  "negative": "vivid saturated colors, warm golden tones",
+  "section": "Camera"
+ },
+ {
+  "name": "Glass plate",
+  "prompt": "Black and white early 1900s glass plate photograph, monochrome gray tones only, soft slightly blurred detail, chipped dark plate edges, silvery fogging in the corners.",
+  "negative": "color, colorful, color photo, pink, red, green, orange, modern photo",
+  "section": "Camera"
+ },
+ {
+  "name": "Tintype / wet plate",
+  "prompt": "Black and white tintype photograph on a dark metal plate, monochrome brown-black and silver tones only, silvery highlights, swirling chemical streaks and pour marks along the edges.",
+  "negative": "color, colorful, color photo, pink, red, green, orange, modern photo",
+  "section": "Camera"
+ },
+ {
+  "name": "Daguerreotype",
+  "prompt": "Black and white 1840s daguerreotype, monochrome silver-gray tones only, faint low-contrast mirror-like image, dark tarnish and oxidation creeping in from the edges, ornate brass frame around the picture.",
+  "negative": "color, colorful, color photo, pink, red, green, orange, modern photo",
+  "section": "Camera"
+ },
+ {
+  "name": "Warm golden",
+  "prompt": "Warm golden color, honey-toned highlights, soft amber shadows, gentle film grain.",
+  "negative": "cool blue tones, neutral white balance",
+  "section": "Film"
+ },
+ {
+  "name": "Faded 1970s print",
+  "prompt": "Faded 1970s photo print, washed out colors drifting toward orange and magenta, lifted milky blacks, soft grain.",
+  "negative": "vivid saturated colors, deep blacks, crisp, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Matte faded film",
+  "prompt": "Matte faded film look, lifted gray-black shadows, low contrast, muted colors.",
+  "negative": "deep blacks, high contrast, vivid saturated colors",
+  "section": "Film"
+ },
+ {
+  "name": "Cool muted",
+  "prompt": "Cool muted colors, desaturated blues and greens, soft gray shadows, quiet overcast mood.",
+  "negative": "warm golden tones, vivid saturated colors, sunny",
+  "section": "Film"
+ },
+ {
+  "name": "Teal and orange",
+  "prompt": "Cinematic color grade, teal-tinted shadows, cool blue-green tint in the shade, warm orange skin tones, the wall keeps its own pale color.",
+  "negative": "neutral colors, natural white balance, teal painted wall, blue painted wall",
+  "section": "Film"
+ },
+ {
+  "name": "Bleach bypass",
+  "prompt": "Bleach bypass film look, muted desaturated gritty colors, a black-and-white silver image laid over the color, skin looking cold, metallic and exhausted, deep dense shadows, bright hard highlights, prominent grain.",
+  "negative": "vibrant saturated colors, warm golden tones, soft low contrast, colorful, warm healthy skin",
+  "section": "Film"
+ },
+ {
+  "name": "Sepia",
+  "prompt": "Sepia toned old photograph, warm brown monochrome, soft faded edges.",
+  "negative": "color, colorful, color photo, blue, green, red, cool tones",
+  "section": "Film"
+ },
+ {
+  "name": "Warm vintage filter",
+  "prompt": "Warm vintage photo filter, boosted yellows, faded blacks, soft vignette.",
+  "negative": "cool blue tones, crisp modern clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Pastel dream",
+  "prompt": "Soft pastel colors, airy overexposed highlights, pale pinks and mint greens, dreamy low contrast.",
+  "negative": "deep blacks, high contrast, dark moody, saturated colors",
+  "section": "Film"
+ },
+ {
+  "name": "Moody dark",
+  "prompt": "Dark moody look, deep crushed shadows, muted desaturated colors, small pools of light.",
+  "negative": "bright airy, evenly lit, high key, vivid colors",
+  "section": "Film"
+ },
+ {
+  "name": "Golden hour glow",
+  "prompt": "Glowing hazy golden backlight, soft lens flare, warm bloom around the highlights.",
+  "negative": "flat overcast light, cool tones, no flare",
+  "section": "Film"
+ },
+ {
+  "name": "Light leaks",
+  "prompt": "Red and orange light leaks streaking in from one edge of the frame, burned-out patches of color.",
+  "negative": "clean pristine photo, evenly exposed, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Fogged film",
+  "prompt": "Fogged film, a milky white haze over the whole picture, washed-out low contrast, pale faded colors, glowing foggy highlights.",
+  "negative": "clear crisp photo, deep blacks, high contrast, clean digital photo",
+  "section": "Film"
+ },
+ {
+  "name": "Accidental double exposure",
+  "prompt": "Double exposure, a night city skyline with glowing windows printed over the entire photo, buildings visible through her face, her dress and the wall, both layers semi-transparent.",
+  "negative": "single exposure, one image, clean photo, plain wall, clean digital photo",
+  "section": "Film"
+ },
+ {
+  "name": "Scratched negative",
+  "prompt": "Long thin white vertical scratch lines running down the whole image, white dust spots and hair specks scattered across it.",
+  "negative": "clean pristine photo, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Smeared lens",
+  "prompt": "Dreamy smeared glow, every bright area bleeding a soft halo into the picture, hazy low contrast.",
+  "negative": "crisp sharp detail, high contrast, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "End of the roll",
+  "prompt": "The right third of the image burned out to bright orange and red, a hard ragged edge where the film ends, the rest of the picture normal.",
+  "negative": "evenly exposed full frame, clean photo, clean digital photo, HDR",
+  "section": "Film"
+ },
+ {
+  "name": "Expired film",
+  "prompt": "Expired film, shifted colors drifting toward magenta or green, faded blacks, heavy grain.",
+  "negative": "accurate natural colors, deep blacks, clean, clean digital photo, HDR",
+  "section": "Film"
  }
 ]

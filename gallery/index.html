@@ -237,6 +237,45 @@
   .pin-btn svg { width: 14px; height: 14px; fill: none; stroke: var(--pink-soft); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
   .tile.pinned .pin-btn { background: var(--gold); border-color: var(--gold); }
   .tile.pinned .pin-btn svg { stroke: #2a1d05; fill: #2a1d05; }
+  /* hide-from-node feature */
+  .hide-btn {
+    position: absolute; top: 8px; right: 44px; width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--line); background: rgba(15, 9, 19, .72); backdrop-filter: blur(4px);
+    display: grid; place-items: center; cursor: pointer; opacity: 0; padding: 0;
+    transition: opacity .15s ease, transform .15s ease, background .15s ease;
+  }
+  .tile:hover .hide-btn, .tile.is-hidden .hide-btn, .hide-btn:focus-visible, .select-mode .hide-btn { opacity: 1; }
+  .hide-btn:hover { transform: scale(1.12); }
+  .hide-btn svg { width: 15px; height: 15px; fill: none; stroke: var(--pink-soft); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+  .tile.is-hidden img { filter: grayscale(1) brightness(.45); }
+  .tile.is-hidden .caption { color: #8d7d88; text-decoration: line-through; }
+  .tile.is-hidden { border-color: rgba(255, 255, 255, .1); }
+  .tile .x-mark {
+    position: absolute; inset: 0; display: none; place-items: center; pointer-events: none;
+    font-size: 84px; font-weight: 300; line-height: 1; color: rgba(255, 90, 110, .9);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, .8);
+  }
+  .tile.is-hidden .x-mark { display: grid; }
+  .tile .hidden-tag {
+    position: absolute; top: 8px; left: 8px; display: none; font-size: 10.5px; font-weight: 800; letter-spacing: .05em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: rgba(255, 90, 110, .9); color: #fff;
+  }
+  .tile.is-hidden .hidden-tag { display: block; }
+  .tile.is-hidden.pinned .hidden-tag { top: 36px; }
+  .tile .sel-box {
+    position: absolute; top: 8px; left: 8px; width: 24px; height: 24px; border-radius: 7px; display: none;
+    place-items: center; border: 2px solid var(--pink-soft); background: rgba(15, 9, 19, .8); color: transparent; font-size: 15px; font-weight: 800;
+  }
+  .select-mode .tile .sel-box { display: grid; }
+  .select-mode .tile.is-hidden .hidden-tag { left: 40px; }
+  .tile.selected { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255, 111, 165, .5); }
+  .tile.selected .sel-box { background: var(--pink); color: #fff; }
+  .hide-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 0 24px 12px; }
+  .hide-bar[hidden] { display: none; }
+  .hide-bar .btn[hidden] { display: none; }
+  .hide-bar .btn.on { background: var(--pink); border-color: var(--pink); color: #fff; }
+  .hide-bar .btn:disabled { opacity: .4; cursor: default; }
+  .hide-bar .sel-count { font-size: 12.5px; color: var(--muted); }
   .pin-order {
     position: absolute;
     top: 8px; left: 8px;
@@ -393,6 +432,23 @@
   .lightbox-meta .style-name { font-size: 19px; font-weight: 800; letter-spacing: -.01em; }
   .lightbox-meta .meta-sub { font-size: 12.5px; color: var(--muted); width: 100%; margin-top: -6px; }
   .meta-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .lb-desc { width: 100%; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 1.5; color: var(--text); }
+  .lb-desc .lbl { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .lb-desc .neg { color: var(--pink-soft); }
+  .lb-ph { display: none; place-items: center; min-height: 220px; padding: 20px; text-align: center; color: var(--muted); font-size: 13px; }
+  .lb-ph.show { display: grid; }
+  .edit-panel { display: none; width: 100%; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .edit-panel.open { display: flex; }
+  .edit-panel label { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .edit-panel textarea {
+    width: 100%; min-height: 84px; resize: vertical; box-sizing: border-box;
+    background: #120b17; color: var(--text); border: 1px solid var(--line); border-radius: 10px;
+    padding: 8px 10px; font: 13px/1.45 var(--font);
+  }
+  .edit-panel textarea:focus { outline: none; border-color: var(--pink); }
+  .edit-panel .hint { font-size: 11.5px; color: var(--muted); }
+  .edit-panel .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .edit-panel .file-name { font-size: 12px; color: var(--gold-soft); }
   .btn {
     font-family: var(--font);
     font-size: 13px;
@@ -410,6 +466,7 @@
   }
   .btn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .btn:hover { border-color: var(--pink); color: var(--pink-soft); }
+  .btn[hidden] { display: none; }
   .btn.primary {
     background: linear-gradient(120deg, var(--pink), #e0528b);
     border-color: transparent;
@@ -637,6 +694,18 @@
   <div class="result-count" id="resultCount"></div>
 </div>
 
+<div class="hide-bar" id="hideBar" hidden>
+  <button class="btn" id="hbSelect" title="Select several styles, then hide or unhide them together">&#9745; select</button>
+  <button class="btn" id="hbAll" hidden>select all shown</button>
+  <button class="btn" id="hbClear" hidden>clear selection</button>
+  <button class="btn gold" id="hbHide" hidden disabled>&#128683; hide selected</button>
+  <button class="btn" id="hbShow" hidden disabled>&#128065; unhide selected</button>
+  <span class="sel-count" id="hbCount"></span>
+  <button class="btn" id="hbOnly" title="Show only the styles hidden from the node">hidden: 0</button>
+  <button class="btn" id="hbUndo" disabled>&#8630; undo</button>
+  <span class="sel-count">Hidden styles disappear from the ComfyUI node (reload the page or refresh node definitions to update its dropdown).</span>
+</div>
+
 <main id="main">
   <div class="empty-state" id="loadingState">
     <div class="big">✦ warming up the gallery…</div>
@@ -657,10 +726,11 @@
   <div class="lightbox-stage">
     <button class="icon-btn lb-nav" id="lbPrev" aria-label="Previous style">‹</button>
     <div class="lightbox-card">
-      <div class="lightbox-img-wrap"><img id="lbImg" alt=""></div>
+      <div class="lightbox-img-wrap"><img id="lbImg" alt=""><div class="lb-ph" id="lbPh">✦ no reference image yet — press “✎ edit” to add one</div></div>
       <div class="lightbox-meta">
         <div class="style-name" id="lbName"></div>
         <div class="meta-sub" id="lbSub"></div>
+        <div class="lb-desc" id="lbDesc"></div>
         <div class="meta-actions">
           <button class="btn gold" id="lbPin">
             <svg viewBox="0 0 24 24"><path d="M9 4h6l-1 7 3 3v2H7v-2l3-3-1-7Z"/><path d="M12 16v5"/></svg>
@@ -674,6 +744,27 @@
             <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
             copy style
           </button>
+          <button class="btn" id="lbEdit" hidden>✎ edit</button>
+          <button class="btn" id="lbHide" hidden>&#128683; hide from node</button>
+        </div>
+        <div class="edit-panel" id="editPanel">
+          <label for="edPrompt">Description (the style paragraph sent to the model)</label>
+          <textarea id="edPrompt" spellcheck="false"></textarea>
+          <div id="edNegWrap">
+            <label for="edNeg">Negative prompt (optional)</label>
+            <textarea id="edNeg" spellcheck="false" style="min-height:52px"></textarea>
+            <div class="hint" id="edNegHint"></div>
+          </div>
+          <label>Reference image</label>
+          <div class="row">
+            <button class="btn" id="edPick" type="button">choose image…</button>
+            <span class="file-name" id="edFile">no new image selected</span>
+            <input type="file" id="edFileInput" accept="image/*" hidden>
+          </div>
+          <div class="row">
+            <button class="btn primary" id="edSave" type="button">save</button>
+            <button class="btn" id="edCancel" type="button">cancel</button>
+          </div>
         </div>
       </div>
     </div>
@@ -737,6 +828,8 @@
   var pinned = [];            // [{section, style, file, thumb}] max 2, FIFO
   var lbIndex = -1;
   var splitPos = 0.5;
+  var styleNegs = {};         // style name -> negative prompt (only styles that define one)
+  var baseNeg = "nsfw, worst quality, bad anatomy, watermark, jpeg artifact";
   var styleTexts = {};        // style name -> full prose paragraph (from styles.json when reachable)
 
   // ---------- dom ----------
@@ -759,6 +852,9 @@
   };
 
   function uri(p) { return encodeURI(p); }
+  var CAN_EDIT = location.pathname.indexOf("/clio_style/gallery") === 0;
+  var bust = {};  // style -> timestamp of its last image upload (defeats the browser cache)
+  function bustQ(style) { return bust[style] ? "?t=" + bust[style] : ""; }
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -830,6 +926,7 @@
         .then(function (data) {
         (data || []).forEach(function (e) {
           styleTexts[e.name] = e.prompt;
+          if (e.negative) styleNegs[e.name] = e.negative;
           if (e.section) {
             styleSections[e.name] = e.section;
             if (tradOrder.indexOf(e.section) === -1) tradOrder.push(e.section);
@@ -916,6 +1013,7 @@
     filtered = images.filter(function (it) {
       if (!it || typeof it.style !== "string") return false;
       if (activeTrad && styleSections[it.style] !== activeTrad) return false;
+      if (onlyHidden && !hiddenSet[it.style]) return false;
       return it.style.toLowerCase().indexOf(q) !== -1;
     });
     if (sortAz) {
@@ -955,7 +1053,7 @@
       img.loading = "lazy";
       img.decoding = "async";
       img.alt = item.style;
-      img.src = uri(item.thumb || item.file);
+      img.src = uri(item.thumb || item.file) + bustQ(item.style);
       img.onerror = function () {
         if (item.file && img.src.indexOf(uri(item.file)) === -1) {
           img.src = uri(item.file); // thumb missing → fall back to full-res
@@ -988,9 +1086,34 @@
       tile.appendChild(pinBtn);
       tile.appendChild(order);
 
-      tile.addEventListener("click", function () { openLightbox(idx); });
+      tile.dataset.style = item.style;
+      var xm = document.createElement("div"); xm.className = "x-mark"; xm.textContent = "✕";
+      var htag = document.createElement("div"); htag.className = "hidden-tag"; htag.textContent = "hidden";
+      var sbox = document.createElement("div"); sbox.className = "sel-box"; sbox.textContent = "✓";
+      tile.appendChild(xm); tile.appendChild(htag); tile.appendChild(sbox);
+      if (CAN_EDIT) {
+        var hbtn = document.createElement("button");
+        hbtn.className = "hide-btn";
+        hbtn.setAttribute("aria-label", "Hide or unhide " + item.style + " in the node");
+        hbtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg>';
+        hbtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var h = !!hiddenSet[item.style];
+          setHidden(h ? [] : [item.style], h ? [item.style] : []);
+        });
+        tile.appendChild(hbtn);
+      }
+      refreshTile(tile);
+
+      tile.addEventListener("click", function () {
+        if (selectMode) { toggleSelected(item.style); return; }
+        openLightbox(idx);
+      });
       tile.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(idx); }
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (selectMode) toggleSelected(item.style); else openLightbox(idx);
+        }
       });
 
       grid.appendChild(tile);
@@ -1092,11 +1215,18 @@
     if (idx < 0 || idx >= filtered.length) return;
     lbIndex = idx;
     var item = filtered[idx];
-    els.lbImg.src = uri(item.file || item.thumb);
+    els.lbImg.src = uri(item.file || item.thumb) + bustQ(item.style);
+    closeEditor();
     els.lbImg.alt = item.style;
+    var ph = $("lbPh");
+    ph.classList.remove("show"); els.lbImg.style.display = "";
+    els.lbImg.onload = function () { ph.classList.remove("show"); els.lbImg.style.display = ""; };
     els.lbImg.onerror = function () {
-      if (item.thumb && els.lbImg.src.indexOf(uri(item.thumb)) === -1) els.lbImg.src = uri(item.thumb);
+      if (item.thumb && els.lbImg.src.indexOf(uri(item.thumb)) === -1) { els.lbImg.src = uri(item.thumb) + bustQ(item.style); return; }
+      els.lbImg.style.display = "none"; ph.classList.add("show");
     };
+    renderDesc(item.style);
+    syncLbHide();
     els.lbName.textContent = item.style;
     var sec = manifest.sections[activeSection] || {};
     var bits = [];
@@ -1106,6 +1236,18 @@
     els.lbSub.textContent = bits.join("  ·  ");
     syncLightboxPin();
     els.lightbox.classList.add("open");
+  }
+
+  function renderDesc(style) {
+    var box = $("lbDesc");
+    box.innerHTML = "";
+    function block(label, text, cls) {
+      var l = document.createElement("div"); l.className = "lbl"; l.textContent = label;
+      var t = document.createElement("div"); if (cls) t.className = cls; t.textContent = text;
+      box.appendChild(l); box.appendChild(t);
+    }
+    block("Description", styleTexts[style] || "(styles.json not reachable — description unavailable)");
+    if (styleNegs[style]) block("Negative prompt", baseNeg + ", " + styleNegs[style], "neg");
   }
 
   function syncLightboxPin() {
@@ -1130,6 +1272,148 @@
   });
   els.lbCopyPrompt.addEventListener("click", function () {
     if (filtered[lbIndex]) copyText(fullPrompt(activeSection, filtered[lbIndex].style), "full prompt copied ♡");
+  });
+
+  // ---------- hide styles from the node ----------
+  var hiddenSet = {};        // style name -> true
+  var selectMode = false;
+  var selected = {};
+  var onlyHidden = false;
+  var lastAction = null;     // {hide:[...], show:[...]} - what undo reverses
+  var hb = {
+    bar: $("hideBar"), select: $("hbSelect"), all: $("hbAll"), clear: $("hbClear"), hide: $("hbHide"),
+    show: $("hbShow"), count: $("hbCount"), only: $("hbOnly"), undo: $("hbUndo"), lbHide: $("lbHide"),
+  };
+
+  function refreshTile(tile) {
+    var st = tile.dataset.style;
+    tile.classList.toggle("is-hidden", !!hiddenSet[st]);
+    tile.classList.toggle("selected", !!selected[st]);
+    var b = tile.querySelector(".hide-btn");
+    if (b) b.title = hiddenSet[st] ? "Unhide in node" : "Hide from node";
+  }
+  function refreshHideUi() {
+    document.querySelectorAll(".grid .tile").forEach(refreshTile);
+    var nHidden = Object.keys(hiddenSet).length, nSel = Object.keys(selected).length;
+    hb.only.textContent = "hidden: " + nHidden;
+    hb.only.classList.toggle("on", onlyHidden);
+    hb.select.classList.toggle("on", selectMode);
+    hb.select.textContent = selectMode ? "\u2611 selecting\u2026" : "\u2611 select";
+    ["all", "clear", "hide", "show"].forEach(function (k) { hb[k].hidden = !selectMode; });
+    hb.hide.disabled = !nSel; hb.show.disabled = !nSel;
+    hb.count.textContent = selectMode ? nSel + " selected" : "";
+    hb.undo.disabled = !lastAction;
+    els.main.classList.toggle("select-mode", selectMode);
+    syncLbHide();
+  }
+  function syncLbHide() {
+    var it = filtered[lbIndex];
+    if (!it) return;
+    hb.lbHide.textContent = hiddenSet[it.style] ? "\uD83D\uDC41 unhide in node" : "\uD83D\uDEAB hide from node";
+  }
+  function toggleSelected(style) {
+    if (selected[style]) delete selected[style]; else selected[style] = true;
+    refreshHideUi();
+  }
+  function postHidden(hide, show) {
+    return fetch("/clio_style/hidden", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ hide: hide, show: show }) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "HTTP " + r.status); return d; }); });
+  }
+  function setHidden(hide, show, isUndo) {
+    if (!hide.length && !show.length) return;
+    postHidden(hide, show).then(function (d) {
+      hiddenSet = {}; d.hidden.forEach(function (n) { hiddenSet[n] = true; });
+      lastAction = isUndo ? null : { hide: hide, show: show };
+      if (onlyHidden && !Object.keys(hiddenSet).length) onlyHidden = false;
+      if (onlyHidden) applyFilter();
+      refreshHideUi();
+      toast((hide.length ? hide.length + " hidden" : "") + (hide.length && show.length ? " \u00b7 " : "") +
+            (show.length ? show.length + " visible again" : "") + " \u2726");
+    }).catch(function (e) { toast("couldn't update: " + e.message); });
+  }
+  function loadHidden() {
+    return fetch("/clio_style/hidden").then(function (r) { return r.json(); }).then(function (d) {
+      hiddenSet = {}; (d.hidden || []).forEach(function (n) { hiddenSet[n] = true; });
+      refreshHideUi();
+    }).catch(function () {});
+  }
+  if (CAN_EDIT) {
+    hb.bar.hidden = false;
+    hb.lbHide.hidden = false;
+    loadHidden();
+    hb.select.addEventListener("click", function () { selectMode = !selectMode; if (!selectMode) selected = {}; refreshHideUi(); });
+    hb.all.addEventListener("click", function () { filtered.forEach(function (it) { selected[it.style] = true; }); refreshHideUi(); });
+    hb.clear.addEventListener("click", function () { selected = {}; refreshHideUi(); });
+    hb.hide.addEventListener("click", function () {
+      var names = Object.keys(selected).filter(function (n) { return !hiddenSet[n]; });
+      selected = {}; setHidden(names, []);
+    });
+    hb.show.addEventListener("click", function () {
+      var names = Object.keys(selected).filter(function (n) { return hiddenSet[n]; });
+      selected = {}; setHidden([], names);
+    });
+    hb.only.addEventListener("click", function () { onlyHidden = !onlyHidden; applyFilter(); refreshHideUi(); });
+    hb.undo.addEventListener("click", function () { if (lastAction) setHidden(lastAction.show, lastAction.hide, true); });
+    hb.lbHide.addEventListener("click", function () {
+      var it = filtered[lbIndex]; if (!it) return;
+      var h = !!hiddenSet[it.style];
+      setHidden(h ? [] : [it.style], h ? [it.style] : []);
+    });
+  }
+
+  // ---------- editor (only when served by ComfyUI at /clio_style/gallery/) ----------
+  var edPanel = $("editPanel"), edPrompt = $("edPrompt"), edNeg = $("edNeg"), edNegWrap = $("edNegWrap");
+  var edNegHint = $("edNegHint"), edFile = $("edFile"), edFileInput = $("edFileInput"), lbEdit = $("lbEdit");
+  var edStyle = null, edHadNeg = false;
+  lbEdit.hidden = !CAN_EDIT;
+
+  function closeEditor() { edPanel.classList.remove("open"); edStyle = null; edFileInput.value = ""; edFile.textContent = "no new image selected"; }
+
+  lbEdit.addEventListener("click", function () {
+    var item = filtered[lbIndex];
+    if (!item) return;
+    if (edPanel.classList.contains("open")) { closeEditor(); return; }
+    fetch("/clio_style/style?name=" + encodeURIComponent(item.style))
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) {
+        edStyle = d.name;
+        edPrompt.value = d.prompt;
+        edHadNeg = !!d.negative;
+        edNeg.value = d.negative;
+        edNegHint.textContent = "Leave empty for no negative. When set, this is added after: " + baseNeg;
+        edPanel.classList.add("open");
+      })
+      .catch(function (e) { toast("couldn't load style (" + e.message + ")"); });
+  });
+  $("edCancel").addEventListener("click", closeEditor);
+  $("edPick").addEventListener("click", function () { edFileInput.click(); });
+  edFileInput.addEventListener("change", function () {
+    edFile.textContent = edFileInput.files[0] ? edFileInput.files[0].name : "no new image selected";
+  });
+
+  $("edSave").addEventListener("click", function () {
+    if (!edStyle) return;
+    var name = edStyle, file = edFileInput.files[0];
+    var payload = { name: name, prompt: edPrompt.value };
+    payload.negative = edNeg.value;
+    fetch("/clio_style/style", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "HTTP " + r.status); return d; }); })
+      .then(function (d) {
+        styleTexts[name] = d.prompt;
+        if (d.negative) styleNegs[name] = d.negative; else delete styleNegs[name];
+        if (!file) return null;
+        return fetch("/clio_style/image?style=" + encodeURIComponent(name), { method: "POST", body: file })
+          .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || "HTTP " + r.status); return j; }); })
+          .then(function () { bust[name] = Date.now(); });
+      })
+      .then(function () {
+        toast("saved ✦");
+        closeEditor();
+        renderDesc(name);
+        if (bust[name]) { renderGrid(); if (lbIndex >= 0) openLightbox(lbIndex); }
+      })
+      .catch(function (e) { toast("save failed: " + e.message); });
   });
 
   // ---------- compare ----------
